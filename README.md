@@ -21,7 +21,7 @@
 
 
 ### Association
--has_many :groups
+-has_many :menbers
 -has_many :messages
 
 ## userテーブル
