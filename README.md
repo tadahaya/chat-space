@@ -33,7 +33,7 @@
 
 
 ### Association
--has_many :groups
+-has_many :members
 -has_many :messages
 
 ## messageテーブル
