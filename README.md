@@ -16,7 +16,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false, add_index|
+|name|string|null: false, add_index|
 |menbers_id|integer|null: false, foreign_key: true|
 
 
