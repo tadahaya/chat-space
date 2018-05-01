@@ -22,6 +22,7 @@
 ### Association
 -has_many :menbers
 -has_many :messages
+-has_many :users, through: :members
 
 ## userテーブル
 
