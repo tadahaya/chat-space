@@ -28,9 +28,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_name|string|null: false,add_index|
-|email|string|null: false|
-|password|string|null: false|
+|name|string|null: false,add_index|
 |menbers_id|integer|null: false, foreign_key: true|
 
 
