@@ -28,7 +28,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false,add_index|
+|name|string|null: false, add_index|
 
 
 ### Association
