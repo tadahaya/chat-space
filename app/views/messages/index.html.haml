@@ -1,1 +1,33 @@
-%p heloo
+!!!
+.all
+  .notice グループを作成しました
+  .side-bar
+    %header
+      %h3 お名前
+    .groups
+      .group--name
+      group名
+      .group--message
+        %p groupの最後のポスト
+  .chat
+    .group-header
+      .group-header--samary
+        group名
+        .group-header--name
+          %ul
+            Member:
+            %li name1
+            %li name2
+    .group--edit Edit
+    .message-area
+      .message-box
+        .message-box--name username
+        .message-box--time 2018/5/7 21:30
+        %p.message-box--text こんにちわ
+        .message-box--name username2
+        .message-box--time 2018/5/7 23:30
+        %p.message-box--text こんばんわですよね？
+    .form
+      %input.form--textbox
+      %input.form--submit{:type => "submit", :name => "commit", :value => "Send"}
+

@@ -1,3 +1,152 @@
-// Place all the styles related to the messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.all{
+height:100%;
+}
+div{
+  margin:0;
+  padding:0;
+}
+.notice{
+  background: #38AEF0;
+  height:24px;
+  width:100%;
+  text-align: center;
+  color:white;
+}
+.side-bar{
+  margin:0;
+  padding:0;
+  float:left;
+}
+header{
+  width:260px;
+  height:100px;
+  background-color:#253141;
+  padding:0 20px;
+  line-height: 100px;
+    h3{
+      display:inline-block;
+      font-weight:bold;
+      font-size:16px;
+      color:#FFF;
+    }
+}
+.groups{
+  width:260px;
+  background-color:#2f3e51;
+  color:#FFF;
+  padding:20px;
+  height:calc(100vh - 100px);
+}
+
+.group--name{
+  margin-bottom:5px;
+  font-size:15px;
+}
+.group--message{
+  margin-bottom:40px;
+  font-size:11px;
+}
+.chat{
+  width:calc(100vw - 300px);
+  background-color: white;
+  float:right;
+}
+
+.group-header{
+  height:auto;
+  padding:35px 0 15px 40px;
+  margin:0 20px;
+  float:left;
+}
+.group-header--samary{
+  width:190px;
+  height:98px;
+}
+.group-header--name{
+  color:#999999;
+  font-size:12px;
+  ul{
+    margin:0;
+  }
+    li{
+      display: inline-block;
+      margin-right: 5px;
+    }
+}
+
+.group--edit{
+  border:1px solid #38AEF0;
+  float:right;
+  height:40px;
+  line-height:40px;
+  margin-top:28px;
+  padding:0 20px;
+}
+
+.message-area{
+  background-color:#FAFAFA;
+  height:calc(100vh - 100px - 90px);
+  overflow:scroll;
+  padding:46px 40px 0;
+  clear:both;
+}
+.message-box{
+  padding:46px 0 40px 0;
+  background-color: white;
+}
+.message-box--name{
+font-size: 16px;
+font-weight: bold;
+color:#434A54;
+margin-right:10px;
+display: inline-block;
+float:left;
+}
+
+.message-box--time{
+font-size: 12px;
+color:#999;
+}
+.message-box--text{
+  clear:both;
+  font-size:14px;
+  color:#434A54;
+}
+
+.form{
+  background-color: #DDD;
+  padding:20px 50px 20px 40px;
+
+}
+input.form--textbox{
+  width:calc(100% - 150px);
+}
+
+input.form--submit{
+  background-color: #38AEF0;
+  border:none;
+  color:#FFF;
+  float:right;
+  font-size: 16px;
+  height:50px;
+  margin-left:15px;
+  padding:0 30px;
+}
+
+
+
+// .block {
+//    background-color: #000;
+//   .title {
+//     color: #FFF;
+//     font-size: 70px;
+//     text-align: center:
+//   }
+//   .text {
+//     font-size: 15px;
+//     color: #FFF;
+//     span {
+//       color: red;
+//       font-size: 20px;
+//     }
+//   }
