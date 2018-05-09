@@ -1,12 +1,16 @@
 !!!
 .all
-  .notice グループを作成しました
+  / .notice グループを作成しました
   .side-bar
     %header
       %h3 お名前
     .groups
       .group--name
       group名
+      .group--message
+        %p groupの最後のポスト
+      .group--name
+      group名２
       .group--message
         %p groupの最後のポスト
   .chat
@@ -18,16 +22,25 @@
             Member:
             %li name1
             %li name2
-    .group--edit Edit
+      .group--edit Edit
     .message-area
       .message-box
         .message-box--name username
         .message-box--time 2018/5/7 21:30
         %p.message-box--text こんにちわ
+      .message-box
+        .message-box--name username2
+        .message-box--time 2018/5/7 23:30
+        %p.message-box--text こんばんわですよね？
+      .message-box
+        .message-box--name username2
+        .message-box--time 2018/5/7 23:30
+        %p.message-box--text こんばんわですよね？
+      .message-box
         .message-box--name username2
         .message-box--time 2018/5/7 23:30
         %p.message-box--text こんばんわですよね？
     .form
-      %input.form--textbox
+      %input.form--textbox{:placeholder => "type a message", :type => "text", :name => "message[content]"}
       %input.form--submit{:type => "submit", :name => "commit", :value => "Send"}
 
