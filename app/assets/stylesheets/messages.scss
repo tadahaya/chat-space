@@ -39,8 +39,8 @@ header{
   width:260px;
   background-color:#2f3e51;
   color:#FFF;
-  padding:20px;
-  height:calc(100vh - 100px);
+  padding:20px 20px 0 20px;
+  height:calc(100vh - 120px);
 }
 
 .group--name{
@@ -57,6 +57,7 @@ header{
   width:calc(100vw - 300px);
   background-color: white;
   float:right;
+  height:100vh;
 }
 
 //グループ名
@@ -130,7 +131,7 @@ color:#999;
 .form{
   background-color: #DDD;
   padding:20px 50px 20px 40px;
-  height:90px;
+  height:50px;
 }
 input.form--textbox{
   width:calc(100% - 150px);
@@ -138,6 +139,17 @@ input.form--textbox{
   padding-left:10px;
   font-size: 16px;
   color:#434A54;
+  position:relative;
+}
+ span::before i{
+  position:absolute;
+  top:0;
+  bottom:0;
+  right:0;
+  margin-right:10px;
+}
+.my-white{
+  color:#FFF;
 }
 
 input.form--submit{
@@ -147,7 +159,6 @@ input.form--submit{
   float:right;
   font-size: 16px;
   height:50px;
-  margin-left:15px;
   padding:0 30px;
 }
 

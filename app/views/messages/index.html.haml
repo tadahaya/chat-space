@@ -44,6 +44,10 @@
         .message-box--time 2018/5/7 23:30
         %p.message-box--text こんばんわですよね？
     .form
-      %input.form--textbox{:placeholder => "type a message", :type => "text", :name => "message[content]"}
-      %input.form--submit{:type => "submit", :name => "commit", :value => "Send"}
+      .form--area
+        %input.form--textbox{:placeholder => "type a message", :type => "text", :name => "message[content]"}
+        %label
+          %span::before
+            %i.fa.fa-picture-o.my-white
+        %input.form--submit{:type => "submit", :name => "commit", :value => "Send"}
 
