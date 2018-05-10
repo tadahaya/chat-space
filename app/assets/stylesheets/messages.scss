@@ -23,13 +23,18 @@ header{
   background-color:#253141;
   padding:0 20px;
   line-height: 100px;
+  color:#FFF;
     h3{
       display:inline-block;
       font-weight:bold;
       font-size:16px;
-      color:#FFF;
     }
 }
+.header__icons{
+  float:right;
+}
+
+
 .groups{
   width:260px;
   background-color:#2f3e51;
