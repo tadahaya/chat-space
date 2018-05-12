@@ -7,47 +7,47 @@
       .header__icons
         .i.fa.fa-pencil-square-o
         .i.fa.fa-gear
-    .groups
-      .group--name
-      group名
-      .group--message
+    .group
+      .group__name
+        group名
+      .group__message
         %p groupの最後のポスト
-      .group--name
-      group名２
-      .group--message
+      .group__name
+        group名２
+      .group__message
         %p groupの最後のポスト
   .chat
     .group-header
-      .group-header--samary
+      .group-header__samary
         group名
-        .group-header--name
+        .group-header__name
           %ul
             Member:
             %li name1
             %li name2
-      .group--edit Edit
+      .group-header__edit Edit
     .message-area
       .message-box
-        .message-box--name username
-        .message-box--time 2018/5/7 21:30
-        %p.message-box--text こんにちわ
+        .message-box__name username
+        .message-box__time 2018/5/7 21:30
+        %p.message-box__text こんにちわ
       .message-box
-        .message-box--name username2
-        .message-box--time 2018/5/7 23:30
-        %p.message-box--text こんばんわですよね？
+        .message-box__name username2
+        .message-box__time 2018/5/7 23:30
+        %p.message-box__text こんばんわですよね？
       .message-box
-        .message-box--name username2
-        .message-box--time 2018/5/7 23:30
-        %p.message-box--text こんばんわですよね？
+        .message-box__name username2
+        .message-box__time 2018/5/7 23:30
+        %p.message-box__text こんばんわですよね？
       .message-box
-        .message-box--name username2
-        .message-box--time 2018/5/7 23:30
-        %p.message-box--text こんばんわですよね？
+        .message-box__name username2
+        .message-box__time 2018/5/7 23:30
+        %p.message-box__text こんばんわですよね？
     .form
-      .form--area
-        %input.form--textbox{:placeholder => "type a message", :type => "text", :name => "message[content]"}
+      .form__area
+        %input.form__textbox{:placeholder => "type a message", :type => "text", :name => "message[content]"}
         %label
           %span::before
             %i.fa.fa-picture-o.my-white
-        %input.form--submit{:type => "submit", :name => "commit", :value => "Send"}
+        %input.form__submit{:type => "submit", :name => "commit", :value => "Send"}
 

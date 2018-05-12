@@ -1,6 +1,6 @@
 @import "./reset";
-@import "./messages";
+@import "./mixin";
+@import "./variable";
 @import "font-awesome";
-/*
-*= require font-awesome
-*/
+@import "./messages";
+
