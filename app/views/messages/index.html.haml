@@ -1,4 +1,3 @@
-!!!
 .all
   / .notice グループを作成しました
   .side-bar
@@ -8,14 +7,7 @@
         .i.fa.fa-pencil-square-o
         .i.fa.fa-gear
     .group
-      .group__name
-        group名
-      .group__message
-        %p groupの最後のポスト
-      .group__name
-        group名２
-      .group__message
-        %p groupの最後のポスト
+      = render "group"
   .chat
     .group-header
       .group-header__samary
@@ -28,21 +20,7 @@
       .group-header__edit Edit
     .message-area
       .message-box
-        .message-box__name username
-        .message-box__time 2018/5/7 21:30
-        %p.message-box__text こんにちわ
-      .message-box
-        .message-box__name username2
-        .message-box__time 2018/5/7 23:30
-        %p.message-box__text こんばんわですよね？
-      .message-box
-        .message-box__name username2
-        .message-box__time 2018/5/7 23:30
-        %p.message-box__text こんばんわですよね？
-      .message-box
-        .message-box__name username2
-        .message-box__time 2018/5/7 23:30
-        %p.message-box__text こんばんわですよね？
+        = render "message-box"
     .form
       .form__area
         %input.form__textbox{:placeholder => "type a message", :type => "text", :name => "message[content]"}
@@ -50,4 +28,3 @@
           %span::before
             %i.fa.fa-picture-o.my-white
         %input.form__submit{:type => "submit", :name => "commit", :value => "Send"}
-
