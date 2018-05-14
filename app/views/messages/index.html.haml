@@ -6,8 +6,7 @@
       .header__icons
         .i.fa.fa-pencil-square-o
         .i.fa.fa-gear
-    .group
-      = render "group"
+    = render "group"
   .chat
     .group-header
       .group-header__samary
@@ -19,8 +18,7 @@
             %li name2
       .group-header__edit Edit
     .message-area
-      .message-box
-        = render "message-box"
+      = render "message-box"
     .form
       .form__area
         %input.form__textbox{:placeholder => "type a message", :type => "text", :name => "message[content]"}
