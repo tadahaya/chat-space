@@ -1,79 +1,77 @@
 .all {
-  height:100%;
+  height: 100%;
 }
 .notice {
   background: $button-color;
-  height:24px;
-  width:100%;
+  height: 24px;
+  width: 100%;
   text-align: center;
-  color:$textcolor-w;
+  color: $textcolor-w;
 }
 .side-bar {
-  margin:0;
-  padding:0;
-  float:left;
-}
-header {
-  width:260px;
-  height:100px;
-  background-color:#253141;
-  padding:0 20px;
-  line-height: 100px;
-  color:$textcolor-w;
-  h3 {
-    display:inline-block;
-    font-weight:bold;
-    font-size:16px;
+  margin: 0;
+  padding: 0;
+  float: left;
+  header {
+    width: 260px;
+    height: 100px;
+    background-color: #253141;
+    padding: 0 20px;
+    line-height: 100px;
+    color: $textcolor-w;
+    h3 {
+      display: inline-block;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .header__icons {
+      float: right;
+    }
   }
-  .header__icons {
-    float:right;
-  }
-}
-
-.group {
-  width:260px;
-  background-color:#2f3e51;
-  color:$textcolor-w;
-  padding:20px 20px 0 20px;
-  height:calc(100vh - 120px);
-  &__name {
-    margin-bottom:5px;
-    font-size:15px;
-  }
-  &__message {
-    margin-bottom:40px;
-    font-size:11px;
-    &__sample {
-      color:$textcolor-w;
+  .group {
+    width: 260px;
+    background-color: #2f3e51;
+    color: $textcolor-w;
+    padding: 20px 20px 0 20px;
+    height: calc(100vh - 120px);
+    &__name {
+      margin-bottom: 5px;
+      font-size: 15px;
+    }
+    &__message {
+      margin-bottom: 40px;
+      font-size: 11px;
+      &__sample {
+        color: $textcolor-w;
+      }
     }
   }
 }
-
 //右側全体
 .chat {
-  width:calc(100vw - 300px);
+  width: calc(100vw - 300px);
   background-color: $textcolor-w;
-  float:right;
-  height:100vh;
+  float: right;
+  height: 100vh;
 }
 
 //グループ名
 .group-header {
-  height:100px;
-  padding:0 40px;
+  height: 100px;
+  padding: 0 40px;
   &__samary {
-    width:190px;
-    margin-top:35px;
-    display:inline-block;
-    font-size: 20px;
-    color:#333;
+    width: 190px;
+    margin-top: 35px;
+    display: inline-block;
+    font-size:  20px;
+    color: #333;
   }
   &__name {
-    color:#999999;
-    font-size:12px;
-    margin-top:15px;
+    color: #999999;
+    font-size: 12px;
+    margin-top: 15px;
     ul {
-      margin:0;
+      margin: 0;
     }
       li {
         display: inline-block;
@@ -81,41 +79,41 @@ header {
       }
   }
   &__edit {
-    border:1px solid $button-color;
-    float:right;
-    height:40px;
-    line-height:40px;
-    margin-top:28px;
-    padding:0 20px;
+    border: 1px solid $button-color;
+    float: right;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 28px;
+    padding: 0 20px;
   }
 }
 // ここからメッセージエリア
 .message-area {
-  background-color:#FAFAFA;
-  height:calc(100vh - 100px - 90px);
-  overflow:scroll;
-  padding:46px 40px 0;
-  box-sizing:border-box;
+  background-color: #FAFAFA;
+  height: calc(100vh - 100px - 90px);
+  overflow: scroll;
+  padding: 46px 40px 0;
+  box-sizing: border-box;
 }
 .message-box {
-  padding-bottom:40px;
+  padding-bottom: 40px;
   background-color: $textcolor-w;
   &__name {
     font-size: 16px;
     font-weight: bold;
-    color:#434A54;
-    margin-right:10px;
+    color: #434A54;
+    margin-right: 10px;
     display: inline-block;
-    float:left;
+    float: left;
   }
   &__time {
     font-size: 12px;
-    color:#999;
+    color: #999;
   }
   &__text {
-    clear:both;
-    font-size:14px;
-    color:#434A54;
+    clear: both;
+    font-size: 14px;
+    color: #434A54;
   }
 }
 
@@ -126,33 +124,33 @@ header {
 // ここから投稿form
 .form {
   background-color: #DDD;
-  padding:20px 50px 20px 40px;
-  height:50px;
+  padding: 20px 50px 20px 40px;
+  height: 50px;
   input.form__textbox {
-    width:calc(100% - 150px);
-    height:50px;
-    padding-left:10px;
+    width: calc(100% - 150px);
+    height: 50px;
+    padding-left: 10px;
     font-size: 16px;
-    color:#434A54;
-    position:relative;
+    color: #434A54;
+    position: relative;
     }
     span::before i {
-      position:absolute;
-      top:0;
-      bottom:0;
-      right:0;
-      margin-right:10px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin-right: 10px;
     }
     input.form__submit {
       background-color: $button-color;
-      border:none;
-      color:$textcolor-w;
-      float:right;
+      border: none;
+      color: $textcolor-w;
+      float: right;
       font-size: 16px;
-      height:50px;
-      padding:0 30px;
+      height: 50px;
+      padding: 0 30px;
     }
 }
 .my-white {
-  color:$textcolor-w;
+  color: $textcolor-w;
 }
