@@ -12,14 +12,14 @@
   margin: 0;
   padding: 0;
   float: left;
-  header {
+  & header {
     width: 260px;
     height: 100px;
     background-color: #253141;
     padding: 0 20px;
     line-height: 100px;
     color: $textcolor-w;
-    h3 {
+    & h3 {
       display: inline-block;
       font-weight: bold;
       font-size: 16px;
@@ -53,103 +53,100 @@
   background-color: $textcolor-w;
   float: right;
   height: 100vh;
-}
-
-//グループ名
-.group-header {
-  height: 100px;
-  padding: 0 40px;
-  &__samary {
-    width: 190px;
-    margin-top: 35px;
-    display: inline-block;
-    font-size:  20px;
-    color: #333;
-  }
-  &__name {
-    color: #999999;
-    font-size: 12px;
-    margin-top: 15px;
-    ul {
-      margin: 0;
+//グループ
+  .group-header {
+    height: 100px;
+    padding: 0 40px;
+    &__samary {
+      width: 190px;
+      margin-top: 35px;
+      display: inline-block;
+      font-size:  20px;
+      color: #333;
     }
-      li {
-        display: inline-block;
-        margin-right: 5px;
+    &__name {
+      color: #999999;
+      font-size: 12px;
+      margin-top: 15px;
+      ul {
+        margin: 0;
+      }
+        li {
+          display: inline-block;
+          margin-right: 5px;
+        }
+    }
+    &__edit {
+      border: 1px solid $button-color;
+      float: right;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 28px;
+      padding: 0 20px;
+    }
+  }
+  // ここからメッセージエリア
+  .message-area {
+    background-color: #FAFAFA;
+    height: calc(100vh - 100px - 90px);
+    overflow: scroll;
+    padding: 46px 40px 0;
+    box-sizing: border-box;
+  }
+  .message-box {
+    padding-bottom: 40px;
+    background-color: $textcolor-w;
+    &__name {
+      font-size: 16px;
+      font-weight: bold;
+      color: #434A54;
+      margin-right: 10px;
+      display: inline-block;
+      float: left;
+    }
+    &__time {
+      font-size: 12px;
+      color: #999;
+    }
+    &__text {
+      clear: both;
+      font-size: 14px;
+      color: #434A54;
+    }
+  }
+  // ここから投稿form
+  .form {
+    background-color: #DDD;
+    padding: 20px 50px 20px 40px;
+    height: 50px;
+    .form__textbox {
+      width: calc(100% - 150px);
+      height: 50px;
+      padding-left: 10px;
+      font-size: 16px;
+      color: #434A54;
+      position: relative;
+      }
+      span::before i {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin-right: 10px;
+      }
+      .form__submit {
+        background-color: $button-color;
+        border: none;
+        color: $textcolor-w;
+        float: right;
+        font-size: 16px;
+        height: 50px;
+        padding: 0 30px;
       }
   }
-  &__edit {
-    border: 1px solid $button-color;
-    float: right;
-    height: 40px;
-    line-height: 40px;
-    margin-top: 28px;
-    padding: 0 20px;
-  }
 }
-// ここからメッセージエリア
-.message-area {
-  background-color: #FAFAFA;
-  height: calc(100vh - 100px - 90px);
-  overflow: scroll;
-  padding: 46px 40px 0;
-  box-sizing: border-box;
-}
-.message-box {
-  padding-bottom: 40px;
-  background-color: $textcolor-w;
-  &__name {
-    font-size: 16px;
-    font-weight: bold;
-    color: #434A54;
-    margin-right: 10px;
-    display: inline-block;
-    float: left;
-  }
-  &__time {
-    font-size: 12px;
-    color: #999;
-  }
-  &__text {
-    clear: both;
-    font-size: 14px;
-    color: #434A54;
-  }
-}
-
 .clearfix {
   @include clearfix
-}
-
-// ここから投稿form
-.form {
-  background-color: #DDD;
-  padding: 20px 50px 20px 40px;
-  height: 50px;
-  input.form__textbox {
-    width: calc(100% - 150px);
-    height: 50px;
-    padding-left: 10px;
-    font-size: 16px;
-    color: #434A54;
-    position: relative;
-    }
-    span::before i {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      margin-right: 10px;
-    }
-    input.form__submit {
-      background-color: $button-color;
-      border: none;
-      color: $textcolor-w;
-      float: right;
-      font-size: 16px;
-      height: 50px;
-      padding: 0 30px;
-    }
 }
 .my-white {
   color: $textcolor-w;
