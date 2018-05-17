@@ -1,0 +1,28 @@
+.all
+  / .notice グループを作成しました
+  .side-bar
+    %header
+      %h3 お名前
+      .header__icons
+        .i.fa.fa-pencil-square-o
+        .i.fa.fa-gear
+    = render "group"
+  .chat
+    .group-header
+      .group-header__samary
+        group名
+        .group-header__name
+          %ul
+            Member:
+            %li name1
+            %li name2
+      .group-header__edit Edit
+    .message-area
+      = render "message-box"
+    .form
+      .form__area
+        %input.form__textbox{:placeholder => "type a message", :type => "text", :name => "message[content]"}
+        %label
+          %span::before
+            %i.fa.fa-picture-o.my-white
+        %input.form__submit{:type => "submit", :name => "commit", :value => "Send"}
