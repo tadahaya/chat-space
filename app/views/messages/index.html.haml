@@ -2,10 +2,13 @@
   / .notice グループを作成しました
   .side-bar
     %header
-      %h3 お名前
+      %h3
+        = current_user.name
       .header__icons
-        .i.fa.fa-pencil-square-o
-        .i.fa.fa-gear
+        = link_to do
+          =fa_icon 'pencil-square-o', class: 'icon'
+        = link_to edit_user_path(current_user) do
+          = fa_icon 'cog' , class: 'icon'
     = render "group"
   .chat
     .group-header
