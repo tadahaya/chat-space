@@ -1,9 +1,7 @@
 .group
-  .group__name
-    group名
-  .group__message
-    %p groupの最後のポスト
-  .group__name
-    group名２
-  .group__message
-    %p groupの最後のポスト
+  - current_user.groups.each do |group|
+    = link_to group_path(group) do
+      .group__name
+        = group.name
+      .group__message
+        %p groupの最後のポスト
