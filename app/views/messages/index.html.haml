@@ -5,11 +5,11 @@
       %h3
         = current_user.name
       .header__icons
-        = link_to do
+        = link_to new_group_path do
           =fa_icon 'pencil-square-o', class: 'icon'
         = link_to edit_user_path(current_user) do
           = fa_icon 'cog' , class: 'icon'
-    = render "group"
+    = render "shared/group"
   .chat
     .group-header
       .group-header__samary
