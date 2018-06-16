@@ -4,4 +4,9 @@ class Message < ApplicationRecord
 
   validates :content, presence: true, unless: :image?
   mount_uploader :image, ImageUploader
+
+  def format_posted_time
+    Message.find(:id).created_at
+
+  end
 end

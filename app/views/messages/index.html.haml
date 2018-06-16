@@ -20,12 +20,21 @@
             %li name1
             %li name2
       .group-header__edit Edit
-    .message-area
-      = render "message-box"
+    / .message-area
+    .messages
+      = render @messages
+    / .form
+    /   .form__area
+    /     %input.form__textbox{:placeholder => "type a message", :type => "text", :name => "message[content]"}
+    /     %label
+    /       %span::before
+    /         %i.fa.fa-picture-o.my-white
+    /     %input.form__submit{:type => "submit", :name => "commit", :value => "Send"}
     .form
-      .form__area
-        %input.form__textbox{:placeholder => "type a message", :type => "text", :name => "message[content]"}
-        %label
-          %span::before
-            %i.fa.fa-picture-o.my-white
-        %input.form__submit{:type => "submit", :name => "commit", :value => "Send"}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
