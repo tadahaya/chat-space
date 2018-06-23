@@ -1,7 +1,7 @@
 .group
   - current_user.groups.each do |group|
-    = link_to group_path(group) do
+    = link_to group_messages_path(group) do
       .group__name
         = group.name
       .group__message
-        %p groupの最後のポスト
+        = group.show_last_message
