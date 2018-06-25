@@ -30,6 +30,8 @@
     /       %span::before
     /         %i.fa.fa-picture-o.my-white
     /     %input.form__submit{:type => "submit", :name => "commit", :value => "Send"}
+    / IDが自動的に付与される仕様(new_group)
+
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
