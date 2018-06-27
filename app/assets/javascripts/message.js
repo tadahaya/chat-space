@@ -5,20 +5,21 @@ $(function(){
       add_image = '<p class="lower-meesage__image"><img src="'+ message.image.url +'"></p>';
     }else{}
 
-    var html =`<div class="message">
-                <div class="upper-message">
-                  <div class="upper-message__user-name">
-                    ${message.user_name}
-                  </div>
-                  <div class="upper-message__date">
-                    ${message.created_at}
-                  </div>
-                </div>
-               <div class="lower-meesage">
-                <p class="lower-meesage__content">${message.content}</p>
-                ${add_image}
-                </div>
-              </div>`;
+    var html =
+    `<div class="message">
+      <div class="upper-message">
+        <div class="upper-message__user-name">
+          ${message.user_name}
+        </div>
+        <div class="upper-message__date">
+        ${message.created_at}
+        </div>
+      </div>
+      <div class="lower-meesage">
+        <p class="lower-meesage__content">${message.content}</p>
+        ${add_image}
+      </div>
+    </div>`;
     return html;
   }
   $('#new_message').on('submit', function(e){
