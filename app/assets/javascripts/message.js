@@ -1,26 +1,17 @@
 $(function(){
   function buildHTML(message){
-          console.log(message);
-    var html ='<div class="message">'+
-      '<div class="upper-message">'+
-        '<div class="upper-message__user-name>${message.user_name}</div>'+
-        '<div class="upper-message__date">${message.created_at}</div>'+
-      '</div>'+
-      '<div class="lower-meesage>${message.content}'+
-    '</div></div>';
+    var html =`<div class="message">
+                <div class="upper-message">
+                  <div class="upper-message__user-name">
+                    ${message.user_name}
+                  </div>
+                  <div class="upper-message__date">
+                    ${message.created_at}
+                  </div>
+                </div>
+               <div class="lower-meesage"><p>${message.content}</p></div>
+              </div>`;
     return html;
-
-  //   .message
-  // .upper-message
-  //   .upper-message__user-name
-  //     = message.user.name
-  //   .upper-message__date
-  //     = message.created_at
-  // .lower-meesage
-  //   - if message.content.present?
-  //     %p.lower-message__content
-  //       = message.content
-  //   = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
   }
   $('#new_message').on('submit', function(e){
     e.preventDefault();
@@ -37,13 +28,14 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      console.log(html);
-      $('.messages').append(html).animate({scrollTop: $('#message_scroll')[0].scrollHeight}, 500, 'swing');
+      $('.messages').append(html).animate({scrollTop: $('.messages')[0].scrollHeight }, 500, 'swing');
+      console.log($('.messages')[0].scrollHeight);
       $('.form__message').val('')
 
     })
     .fail(function(){
       alert('error');
     })
+    return false;
     })
   });
