@@ -37,9 +37,11 @@ function appendUser(user) {
         });
       }
       else {
-        appendNoProduct("NO");
+        appendNoProduct("そのユーザーはいませんでした");
       }
     })
-
-  })
-})
+    .fail(function() {
+      alert('ユーザー検索に失敗しました');
+    })
+  });
+});
