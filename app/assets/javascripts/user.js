@@ -15,7 +15,7 @@ function appendUser(user) {
 
 
   /*keyupイベントとAjax*/
-  $(".chat-group-form__input").on("keyup", function(){
+  $("#user-search-field").on("keyup", function(){
     var input = $("#user-search-field").val();
     console.log(input);
 
