@@ -1,8 +1,9 @@
 $(function() {
 
 var search_list = $(".chat-group-user");
+var chat_members = $("#chat-member");
 
-/* HTML作成 */
+/* STEP1:チャットメンバーを追加 HTML作成 */
 function appendUser(user) {
   console.log(user);
   var html = `
@@ -14,10 +15,21 @@ function appendUser(user) {
  }
 
 
+/* STEP2:チャットメンバー HTML作成 */
+function addChatUser(add_user) {
+  var html = `
+<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
+  <input name='group[user_ids][]' type='hidden' value='${add_user.userId}'>
+  <p class='chat-group-user__name'>${ add_user.userName }</p>
+  <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
+</div>`;
+  chat_members.append(html);
+ }
+
   /*keyupイベントとAjax*/
   $("#user-search-field").on("keyup", function(){
     var input = $("#user-search-field").val();
-    console.log(input);
+    console.log("input:" + input);
 
     $.ajax({
       type: 'GET',
@@ -25,23 +37,34 @@ function appendUser(user) {
       data: { name: input },
       dataType: 'json'
     })
-
     .done(function(users){
       var myjson = JSON.stringify(users);
-      console.log(myjson);
+      console.log("JSON" + myjson);
       $(".chat-group-user").empty();
-
       if (users.length !== 0){
         users.forEach(function(user){
           appendUser(user);
         });
       }
       else {
-        appendNoProduct("そのユーザーはいませんでした");
+        $(".chat-group-user").append("そのユーザーはいませんでした");
       }
     })
     .fail(function() {
       alert('ユーザー検索に失敗しました');
     })
+    return false;
   });
+// 検索したリストにメンバーを追加する
+  $(".chat-group-form__field").on("click", function(){
+    $(".chat-group-user__btn--add").on("click" ,function(){
+      event.stopPropagation();
+      console.log(this)
+      var add_user = $(this).data();
+      addChatUser(add_user);
+      $(this).parent().remove();
+    });
+  return false;
+  })
 });
+
