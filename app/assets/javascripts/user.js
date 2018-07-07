@@ -1,7 +1,5 @@
 $(function() {
-
 var search_list = $("#user-search-result");
-
 const chat_user =  $('#chat-group-users');
 
 /* STEP1:チャットメンバー候補を表示 HTML作成 */
@@ -14,18 +12,16 @@ function appendUser(user) {
   search_list.append(html);
  }
 
-
 /* STEP2:チャットメンバーに追加 HTML作成 */
 function addChatUser(add_user) {
   var html = `
-<div class='chat-group-user clearfix js-chat-member' id='${add_user.userId}'>
-  <input name='group[user_ids][]' type='hidden' value='${add_user.userId}'>
-  <p class='chat-group-user__name'>${ add_user.userName }</p>
-  <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn' data-user-id="${add_user.userId}" data-user-name="${add_user.userName}">削除</a>
-</div>`;
+    <div class='chat-group-user clearfix js-chat-member' id='${add_user.userId}'>
+      <input name='group[user_ids][]' type='hidden' value='${add_user.userId}'>
+      <p class='chat-group-user__name'>${ add_user.userName }</p>
+      <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn' data-user-id="${add_user.userId}" data-user-name="${add_user.userName}">削除</a>
+    </div>`;
   $("#chat-group-users").append(html);
  }
-
 
 /* STEP3:チャットメンバーから削除 HTML作成 */
 function removeUser(user) {
@@ -37,7 +33,6 @@ function removeUser(user) {
     </div>`;
   search_list.append(html);
  }
-
 
   /*keyupイベントとAjax*/
   $("#user-search-field").on("keyup", function(){
@@ -53,8 +48,6 @@ function removeUser(user) {
       dataType: 'json'
     })
     .done(function(users){
-      var myjson = JSON.stringify(users);
-      console.log("JSON" + myjson);
       $("#user-search-result").empty();
       if (users.length !== 0){
         users.forEach(function(user){
@@ -92,7 +85,7 @@ function removeUser(user) {
     console.log(remove_user);
     removeUser(remove_user);
     $(this).parent().fadeOut(700);
-});
+  });
   return false;
 });
 
