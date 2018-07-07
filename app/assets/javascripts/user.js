@@ -84,7 +84,7 @@ function removeUser(user) {
     var remove_user = $(this).data();
     console.log(remove_user);
     removeUser(remove_user);
-    $(this).parent().fadeOut(700);
+    $(this).parent().remove();
   });
   return false;
 });
