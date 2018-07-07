@@ -26,7 +26,10 @@
           .chat-group-user.clearfix.js-chat-member{id: "#{user.id}"}
             %input{name: "group[user_ids][]", type: "hidden", value: "#{user.id}"}
             %p.chat-group-user__name #{user.name}
-            %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn{"data-user-id": "#{user.id}", "data-user-name": "#{user.name}"} 削除
+            - if current_user.id == user.id
+              %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn{"data-user-id": "#{user.id}", "data-user-name": "#{user.name}"}
+            - else
+              %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn{"data-user-id": "#{user.id}", "data-user-name": "#{user.name}"}削除
   .chat-group-form__field.clearfix
     .chat-group-form__field
       = f.submit class: 'chat-group-form__action-btn'

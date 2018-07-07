@@ -25,7 +25,6 @@ function addChatUser(add_user) {
 
 /* STEP3:チャットメンバーから削除 HTML作成 */
 function removeUser(user) {
-  console.log(user);
   var html = `
     <div class="chat-group-user clearfix">
       <p class="chat-group-user__name">${ user.userName }</p>
@@ -70,7 +69,6 @@ function removeUser(user) {
     event.stopPropagation();
     var add_user = $(this).data();
     var count = $(".chat-group-user__btn--remove").data();
-    console.log(count.userId);
     if (add_user.userId !== count.userId){
       addChatUser(add_user);
       $(this).parent().remove();
@@ -82,7 +80,6 @@ function removeUser(user) {
   $("#chat-group-users").on("click", ".chat-group-user__btn--remove", function(){
     event.stopPropagation();
     var remove_user = $(this).data();
-    console.log(remove_user);
     removeUser(remove_user);
     $(this).parent().remove();
   });
