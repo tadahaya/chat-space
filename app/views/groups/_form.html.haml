@@ -1,10 +1,5 @@
 = form_for @group do |f|
-  - if @group.errors.any?
-    .chat-group-form__errors
-      %h2= "#{@group.errors.full_messages.count}件のエラーが発生しました。"
-      %ul
-        - @group.errors.full_messages.each do |message|
-          %li= message
+  = render partial: 'error', locals: { group: @group }
   .chat-group-form__field
     .chat-group-form__field--left
       = f.label :name, class: 'chat-group-form__label'
@@ -24,7 +19,7 @@
       #chat-group-users
         - @group.users.each do |user|
           .chat-group-user.clearfix.js-chat-member{id: "#{user.id}"}
-            %input{name: "group[user_ids][]", type: "hidden", value: "#{user.id}"}
+            = hidden_field_tag 'group[user_ids][]', user.id
             %p.chat-group-user__name #{user.name}
             - if current_user.id == user.id
               %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn{"data-user-id": "#{user.id}", "data-user-name": "#{user.name}"}
