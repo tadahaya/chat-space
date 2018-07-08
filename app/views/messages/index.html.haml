@@ -19,7 +19,7 @@
             - @group.users.each do |user|
               %li #{user.name}
       .group-header__edit
-        = link_to "Edit" , edit_group_path(@group.id)
+        = link_to "Edit" , edit_group_path(@group)
     .messages
       = render @messages
     .form

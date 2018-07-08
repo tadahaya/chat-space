@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :set_group, only: [:edit, :update]
   def index
   end
 
@@ -17,11 +18,9 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    set_group
   end
 
   def update
-    set_group
     if set_group.update(group_params)
       redirect_to groups_path, notice: 'グループを編集しました'
     else
