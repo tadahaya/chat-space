@@ -12,13 +12,14 @@
   .chat
     .group-header
       .group-header__samary
-        group名
+        = @group.name
         .group-header__name
           %ul
             Member:
-            %li name1
-            %li name2
-      .group-header__edit Edit
+            - @group.users.each do |user|
+              %li #{user.name}
+      .group-header__edit
+        = link_to "Edit" , edit_group_path(@group)
     .messages
       = render @messages
     .form
