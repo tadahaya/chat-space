@@ -21,6 +21,7 @@ $(function(){
     </div>`;
     return html;
   }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -44,40 +45,13 @@ $(function(){
     return false;
     })
 
-
-
-  function buildHTML2(message){
-    var add_image ="";
-    var html =
-    `<div class="message">
-      <div class="upper-message">
-        <div class="upper-message__user-name">
-          ${message.name}
-        </div>
-        <div class="upper-message__date">
-        ${message.date}
-        </div>
-      </div>
-      <div class="lower-meesage">
-        <p class="lower-meesage__content">${message.content}</p>
-        ${add_image}
-      </div>
-    </div>`;
-    return html;
-  }
-
-
-  var count = 0;
+//自動更新
   var countup = function(){
-
-    console.log(count++);
     var url = $('#new_message').attr('action');
-
     $.ajax({
       url: url,
       type: "GET",
       dataType: 'json',
-      data: { name: name},
       processData: false,
       contentType: false
     })
@@ -85,19 +59,15 @@ $(function(){
       var insertHTML ='';
       if (messages.length !== 0){
         messages.forEach(function(message){
-        insertHTML += buildHTML2(message);
+        insertHTML += buildHTML(message);
         $(".messages").html(insertHTML);
-        console.log(message);
-
         });
       }else{
         console.log("NG");
       }
-
     })
     .fail(function(){
       alert("自動メッセージ取得に失敗しました")
-      console.log("FAIL");
     })
   }
   setInterval(countup, 5000);
