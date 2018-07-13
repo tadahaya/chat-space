@@ -60,7 +60,7 @@ $(function(){
       new_messages.forEach(function(message){
         insertHTML += buildHTML(message);
         $(".messages").append(insertHTML);
-        });
+      });
     })
     .fail(function(){
       alert("自動メッセージ取得に失敗しました")
