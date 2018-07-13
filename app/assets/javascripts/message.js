@@ -1,12 +1,11 @@
 $(function(){
   function buildHTML(message){
     var add_image ="";
-    if(message.image.url){
-      add_image = `<p class="lower-meesage__image"><img src="${message.image.url}"></p>`;
-    }else{}
-
+    if(message.image){
+      add_image = `<p class="lower-meesage__image"><img src="${message.image}"></p>`;
+    }
     var html =
-    `<div class="message">
+    `<div class="message" data-message-id="${message.id}">
       <div class="upper-message">
         <div class="upper-message__user-name">
           ${message.user_name}
@@ -22,6 +21,7 @@ $(function(){
     </div>`;
     return html;
   }
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -38,10 +38,33 @@ $(function(){
       var html = buildHTML(data);
       $('.messages').append(html).animate({scrollTop: $('.messages')[0].scrollHeight }, 500, 'swing');
       $('.form__message').val('');
+      $('.hidden').val('');
     })
     .fail(function(){
-      alert('error');
+      alert("送信したテキストを表示できません。リロードしてください");
     })
     return false;
     })
-  });
+
+//自動更新
+  var countup = function(){
+    var lastMessageId = $('.message').last().data('message-id');
+    $.ajax({
+      type: "GET",
+      url: location.href,
+      dataType: 'json',
+      data: {lastMessageId: lastMessageId},
+    })
+    .done(function(new_messages){
+      var insertHTML ='';
+      new_messages.forEach(function(message){
+        insertHTML += buildHTML(message);
+        $(".messages").append(insertHTML);
+      });
+    })
+    .fail(function(){
+      alert("自動メッセージ取得に失敗しました")
+    })
+  }
+  setInterval(countup, 5000);
+})
