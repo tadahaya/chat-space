@@ -56,7 +56,6 @@ $(function(){
       data: {lastMessageId: lastMessageId},
     })
     .done(function(new_messages){
-
       var insertHTML ='';
       new_messages.forEach(function(message){
         insertHTML += buildHTML(message);
