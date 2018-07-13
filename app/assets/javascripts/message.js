@@ -1,8 +1,8 @@
 $(function(){
   function buildHTML(message){
     var add_image ="";
-    if(message.image.url){
-      add_image = `<p class="lower-meesage__image"><img src="${message.image.url}"></p>`;
+    if(message.image){
+      add_image = `<p class="lower-meesage__image"><img src="${message.image}"></p>`;
     }
     var html =
     `<div class="message" data-message-id="${message.id}">
@@ -48,25 +48,19 @@ $(function(){
 
 //自動更新
   var countup = function(){
-    var newest_id = $('.message').last().data('message-id');
-    console.log(newest_id);
+    var lastMessageId = $('.message').last().data('message-id');
     $.ajax({
       type: "GET",
       url: location.href,
       dataType: 'json',
-      data: {newest_id: newest_id},
+      data: {lastMessageId: lastMessageId},
     })
-    .done(function(newest){
-      console.log(newest);
+    .done(function(new_messages){
+
       var insertHTML ='';
-      newest.forEach(function(message){
-          console.log("ne:"+newest_id);
-          console.log("me:"+message.id);
-        if (message.id > newest_id){
+      new_messages.forEach(function(message){
         insertHTML += buildHTML(message);
         $(".messages").append(insertHTML);
-        console.log(insertHTML);
-      }
         });
     })
     .fail(function(){
