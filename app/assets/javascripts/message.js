@@ -47,6 +47,7 @@ $(function(){
     })
 
 //自動更新
+if (window.location.href.match(/\/groups\/\d+\/messages/)) {
   var countup = function(){
     var lastMessageId = $('.message').last().data('message-id');
     $.ajax({
@@ -67,4 +68,5 @@ $(function(){
     })
   }
   setInterval(countup, 5000);
+}
 })
